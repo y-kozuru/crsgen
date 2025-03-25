@@ -1,8 +1,0 @@
-* オブジェクトを追加する。
-	* Label
-	* DateEdit
-	* NumberEdit
-* Itemを持つオブジェクトを追加する。
-	* PulldownList
-	* CheckBox
-	* OptionButton

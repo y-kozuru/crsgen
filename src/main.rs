@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::env;
 
 // CRSスクリプトの文字列をコンパイル時定数として定義する。
+const USE_UTF8: &str = r#"encoding "utf-8;"#;
 const FORM: &str =
 "Form Form1 {
 	Width = 390;
@@ -109,7 +110,7 @@ fn main() {
 	let mut count_by_objects: HashMap<&str, u32> = HashMap::new();
 	let mut total_count = 0u32;
 
-	let mut result = format!("{}{}", String::from(FORM), ERR);
+	let mut result = format!("{}\n\n{}{}", USE_UTF8, String::from(FORM), ERR);
 	let args: Vec<String> = env::args().collect();
 	for arg in args {
 		for (&name, &func) in &object_table {

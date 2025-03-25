@@ -110,7 +110,7 @@ fn main() {
 	let mut count_by_objects: HashMap<&str, u32> = HashMap::new();
 	let mut total_count = 0u32;
 
-	let mut result = format!("{}\n\n{}{}", USE_UTF8, String::from(FORM), ERR);
+	let mut result = format!("{}\n\n{}{}", USE_UTF8, FORM, ERR);
 	let args: Vec<String> = env::args().collect();
 	for arg in args {
 		for (&name, &func) in &object_table {
@@ -122,6 +122,6 @@ fn main() {
 			total_count += 1;
 		}
 	}
-	result = format!("{}\n{}{}", result, DESIGNTIME, String::from(END_BLOCK));
+	result = format!("{}\n{}{}", result, DESIGNTIME, END_BLOCK);
 	println!("{}", result);
 }
